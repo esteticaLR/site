@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Salón Estética LR</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     :root {
       --main-color: #c4046e;
@@ -56,16 +56,15 @@
       opacity: .7;
     }
 
-    /* ---------- HERO ---------- */
+    /* ---------- HERO (CON VIDEO DE FONDO) ---------- */
     .hero {
-      background: url('https://images.unsplash.com/photo-1559599078-82e64563c58b?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
-      height: 55vh;
+      height: 65vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       padding: 0 1rem;
-      margin-top: 80px;
+      margin-top: 120px;
       color: white;
       position: relative;
       overflow: hidden;
@@ -76,12 +75,36 @@
       position: absolute;
       inset: 0;
       background-color: rgba(0,0,0,.4);
+      z-index: 1;
     }
 
     .hero h2 {
       font-size: 2.4rem;
       max-width: 700px;
-      z-index: 1;
+      z-index: 2; 
+      position: relative;
+    }
+
+    .video-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .video-background iframe {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; 
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 100%;
+      min-height: 500%;
     }
 
     /* ---------- SECTIONS ---------- */
@@ -202,15 +225,25 @@
 </header>
 
 <div class="hero">
+  <div class="video-background">
+    <iframe
+      src="https://www.youtube.com/embed/xLVRYgRJvdw?controls=0&autoplay=1&mute=1&loop=1&playlist=xLVRYgRJvdw"
+      frameborder="0"
+      allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+      title="Video de Fondo del Salón de Estética LR"
+    ></iframe>
+  </div>
   <h2>Descubre tu mejor versión con nuestros servicios profesionales de estética integral</h2>
 </div>
 
 <!-- ===================== SECCIÓN CRIOLIPÓLISIS ===================== -->
+
 <section id="criolipolisis">
   <h2>Criolipólisis</h2>
   <div class="grid">
     <div class="card" onclick="toggleSpecs(this)">
-      <img src="https://sessionestetica.com/wp-content/uploads/criolipolisis-1.jpg" alt="Criolipólisis">
+      <img src="https://sessionestetica.com/wp-content/uploads/criolipolisis-1.jpg" alt="[Image of Criolipólisis]">
       <h3>Criolipólisis reduccion de grasa </h3>
       <p>Reduce las grasas de manera rapida no invasivas, indoloras, tratamiento seguro.</p>
       <p>haga clic para ver las opciones</p>
@@ -224,7 +257,7 @@
     </div>
 
     <div class="card" onclick="toggleSpecs(this)">
-      <img src="https://clinicaslicea.com/wp-content/uploads/2023/01/woman-getting-anticellulite-and-anti-fat-therapy-1-1.jpg" alt="Criolipólisis Avanzada">
+      <img src="https://clinicaslicea.com/wp-content/uploads/2023/01/woman-getting-anticellulite-and-anti-fat-therapy-1-1.jpg" alt="[Image of Criolipólisis Avanzada]">
       <h3>Vela Slim Plus </h3>
       <p>• Reduce la Grasa Localizada </p>
       <p>• Modela - Tonifica</p>
@@ -236,19 +269,20 @@
         <h4>opciones</h4>
         <p>Abdomen + Flancos: $15.000</p>
         <p>Pantalon de Montar y Gluteos: $15.000</p>
-        <p>Piernas (Retencion de Liquidos): $15.000</p>
+        <p>Piernas Cansadas ( Retencion de Liquidos ): $15.000</p>
         <p>Dolor Muscular: $7.000</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===================== SECCIÓN DEPILACIÓN ===================== -->
+<!-- ===================== SECCIÓN DEPILACIÓN MUJERES ===================== -->
+
 <section id="depilacion">
   <h2>Depilación Definitiva Mujeres</h2>
   <div class="grid">
     <div class="card" onclick="toggleSpecs(this)">
-      <img src="https://hellenic.cl/wp-content/uploads/2024/09/IMAGEN-SERVICIO-DEPILACION-LASER-PIERNAS-COMPLETAS-MUJER.jpg" alt="Piernas Completas">
+      <img src="https://hellenic.cl/wp-content/uploads/2024/09/IMAGEN-SERVICIO-DEPILACION-LASER-PIERNAS-COMPLETAS-MUJER.jpg" alt="[Image of Piernas Completas]">
       <h3>Piernas / Cavado</h3>
       <p>haga clic para ver las opciones</p>
       <span class="toggle-icon">▼</span>
@@ -263,7 +297,7 @@
     </div>
 
     <div class="card" onclick="toggleSpecs(this)">
-      <img src="https://germainegoyamadrid.com/wp-content/uploads/2023/09/054-blog-depilacion-laser-axilas.jpg" alt="Axilas + Cavado">
+      <img src="https://germainegoyamadrid.com/wp-content/uploads/2023/09/054-blog-depilacion-laser-axilas.jpg" alt="[Image of Axilas + Cavado]">
       <h3>Axilas</h3>
       <p>Precio por sesión: $5.000</p>
       <span class="toggle-icon">▼</span>
@@ -274,7 +308,7 @@
     </div>
 
     <div class="card" onclick="toggleSpecs(this)">
-      <img src="https://okdiario.com/img/2020/01/20/depilar-los-brazos-655x368.jpg" alt="">
+      <img src="https://okdiario.com/img/2020/01/20/depilar-los-brazos-655x368.jpg" alt="[Image of Brazo]">
       <h3>Brazo</h3>
       <p>haga clic para ver las opciones</p>
       <span class="toggle-icon">▼</span>
@@ -286,7 +320,7 @@
     </div>
 
     <div class="card" onclick="toggleSpecs(this)">
-      <img src="https://resizer.lavozdigital.es/resizer/resizer.php?imagen=https%3A%2F%2Foferplan.lavozdigital.es%2F%2Fimages%2Fsized%2Fimages%2Fd%2Fe%2Fp%2Fdepilacionlaserfacialchiclanacadiz1web-497x280.jpg&nuevoancho=655&nuevoalto=369&crop=1" alt="">
+      <img src="https://resizer.lavozdigital.es/resizer/resizer.php?imagen=https%3A%2F%2Foferplan.lavozdigital.es%2F%2Fimages%2Fsized%2Fimages%2Fd%2Fe%2Fp%2Fdepilacionlaserfacialchiclanacadiz1web-497x280.jpg&nuevoancho=655&nuevoalto=369&crop=1" alt="[Image of Rostro]">
       <h3>Rostro</h3>
       <p>haga clic para ver las opciones</p>
       <span class="toggle-icon">▼</span>
@@ -299,9 +333,8 @@
     </div>
 
     <div class="card" onclick="toggleSpecs(this)">
-      <img src="https://clinicareinamercedes.com/wp-content/uploads/2023/04/the-beauty-center-producto-11.png" alt="">
-      <h3>Tira de cola</h3>
-      <p>haga clic para ver las opciones</p>
+      <img src="https://clinicareinamercedes.com/wp-content/uploads/2023/04/the-beauty-center-producto-11.png" alt="[Image of Tira de cola]">
+      <h3>Espalda / Glúteos</h3> <p>haga clic para ver las opciones</p>
       <span class="toggle-icon">▼</span>
       <div class="specs">
         <h4>Opciones</h4>
@@ -311,14 +344,17 @@
         <p>Gluteos: $5.000</p>
       </div>
     </div>
+  </div>
 </section>
 
-<!-- ===================== SECCIÓN DEPILACIÓN ===================== -->
+<!-- ===================== SECCIÓN DEPILACIÓN HOMBRES ===================== -->
+
+
 <section id="depilacion">
   <h2>Depilación Definitiva Hombres</h2>
   <div class="grid">
     <div class="card" onclick="toggleSpecs(this)">
-      <img src="https://depilacionlasermasculina.com.ar/wp-content/uploads/2024/04/Sin-t%C3%ADtulo.jpeg" alt="Piernas Completas">
+      <img src="https://depilacionlasermasculina.com.ar/wp-content/uploads/2024/04/Sin-t%C3%ADtulo.jpeg" alt="[Image of Barba]">
       <h3>Barba</h3>
       <p>Precio por sesión: $7.000</p>
       <span class="toggle-icon">▼</span>
@@ -328,7 +364,7 @@
     </div>
 
     <div class="card" onclick="toggleSpecs(this)">
-      <img src="https://vellochau.com/wp-content/uploads/2023/11/axilas-hombres_optimized.jpg" alt="Axilas + Cavado">
+      <img src="https://vellochau.com/wp-content/uploads/2023/11/axilas-hombres_optimized.jpg" alt="[Image of Axilas]">
       <h3>Axilas</h3>
       <p>Precio por sesión: $6.000</p>
       <span class="toggle-icon">▼</span>
@@ -339,7 +375,7 @@
     </div>
 
     <div class="card" onclick="toggleSpecs(this)">
-      <img src="https://laserum.com/wp-content/uploads/2024/01/Depilacion-laser-para-hombres-1080x675.webp" alt="">
+      <img src="https://laserum.com/wp-content/uploads/2024/01/Depilacion-laser-para-hombres-1080x675.webp" alt="[Image of Brazo completo]">
       <h3>Brazo completo </h3>
       <p>Precio por sesión: $7.000</p>
       <span class="toggle-icon">▼</span>
@@ -349,7 +385,7 @@
     </div>
 
     <div class="card" onclick="toggleSpecs(this)">
-      <img src="https://depilacionlasermasculina.com.ar/wp-content/uploads/2024/04/Sin-t%C3%ADtulo-2-hero-mobile.jpeg" alt="">
+      <img src="https://depilacionlasermasculina.com.ar/wp-content/uploads/2024/04/Sin-t%C3%ADtulo-2-hero-mobile.jpeg" alt="[Image of Abdomen]">
       <h3>Abdomen</h3>
       <p>Precio por sesión $7.000</p>
       <span class="toggle-icon">▼</span>
@@ -359,7 +395,7 @@
     </div>
 
     <div class="card" onclick="toggleSpecs(this)">
-      <img src="https://laserum.com/wp-content/uploads/2024/03/depilacion-laser-en-el-pecho-para-hombres.png" alt="">
+      <img src="https://laserum.com/wp-content/uploads/2024/03/depilacion-laser-en-el-pecho-para-hombres.png" alt="[Image of Pecho]">
       <h3>Pecho</h3>
       <p>Precio por sesión $7.000</p>
       <span class="toggle-icon">▼</span>
@@ -368,8 +404,8 @@
       </div>
     </div>
 
-        <div class="card" onclick="toggleSpecs(this)">
-      <img src="https://clinicamerced.cl/wp-content/uploads/2021/06/Kn.-Sofia-Caceres-Lopez-Kinesiologia-6-de-tamano-grande.jpeg" alt="">
+    <div class="card" onclick="toggleSpecs(this)">
+      <img src="https://clinicamerced.cl/wp-content/uploads/2021/06/Kn.-Sofia-Caceres-Lopez-Kinesiologia-6-de-tamano-grande.jpeg" alt="[Image of Espalda Completa]">
       <h3>Espalda Completa</h3>
       <p>Precio por sesión $7.000</p>
       <span class="toggle-icon">▼</span>
@@ -378,9 +414,8 @@
       </div>
     </div>
 
-
-        <div class="card" onclick="toggleSpecs(this)">
-      <img src="https://b3317811.smushcdn.com/3317811/wp-content/uploads/2023/09/resultados-depilacion-laser-300x300.jpg?lossy=2&strip=1&webp=1" alt="">
+    <div class="card" onclick="toggleSpecs(this)">
+      <img src="https://b3317811.smushcdn.com/3317811/wp-content/uploads/2023/09/resultados-depilacion-laser-300x300.jpg?lossy=2&strip=1&webp=1" alt="[Image of Pierna / zona intima]">
       <h3>Pierna / zona intima</h3>
       <p>haga clic para ver las opciones</p>
       <span class="toggle-icon">▼</span>
@@ -390,17 +425,16 @@
         <p>zona intima: $8.000</p>
       </div>
     </div>
-      </div>
-    </div>
   </div>
 </section>
 
 <!-- ===================== SECCIÓN SKINCARE ===================== -->
+
 <section id="skincare">
   <h2>Skin Care & Faciales</h2>
   <div class="grid">
     <div class="card" onclick="toggleSpecs(this)">
-      <img src="https://www.draverobariatra.com/images/pasted%20image%20700x408366x214.jpg?crc=4145389223" alt="Limpieza Facial Profunda">
+      <img src="https://www.draverobariatra.com/images/pasted%20image%20700x408366x214.jpg?crc=4145389223" alt="[Image of Limpieza Facial Profunda]">
       <h3>Limpieza Facial</h3>
       <p>haga clic para ver las opciones</p>
       <span class="toggle-icon">▼</span>
@@ -414,7 +448,7 @@
     </div>
 
     <div class="card" onclick="toggleSpecs(this)">
-      <img src="https://i0.wp.com/milenaestetica.com/wp-content/uploads/2017/09/microdermoabrasion-punta-diamante.jpg?fit=526%2C526&ssl=1" alt="Dermaplaning">
+      <img src="https://i0.wp.com/milenaestetica.com/wp-content/uploads/2017/09/microdermoabrasion-punta-diamante.jpg?fit=526%2C526&ssl=1" alt="[Image of Dermaplaning]">
       <h3>Punta de Diamante</h3>
       <p>Precio: $15.000</p>
       <span class="toggle-icon">▼</span>
@@ -425,16 +459,15 @@
   </div>
 </section>
 
-
 <!-- ===================== SECCIÓN UÑAS ===================== -->
+
 <section id="uñas">
   <h2>Uñas</h2>
   <div class="grid">
-    <!-- card template repeated -->
     <div class="card" onclick="toggleSpecs(this)">
-      <img src="https://www.elespectador.com/resizer/v2/6QRNFMOIVJHCBOL6ETXHRA3BEY.png?auth=fa45bc3c5f1c4e553a4c933fd78902bf351160ed1a40f3defaa45d9e8a9b1de0&width=920&height=613&smart=true&quality=70" alt="Kapping">
+      <img src="https://www.elespectador.com/resizer/v2/6QRNFMOIVJHCBOL6ETXHRA3BEY.png?auth=fa45bc3c5f1c4e553a4c933fd78902bf351160ed1a40f3defaa45d9e8a9b1de0&width=920&height=613&smart=true&quality=70" alt="[Image of Kapping]">
       <h3>Kapping</h3>
-      <p>Precio: $10.000</p>
+      <p>Precio: $9.000</p>
       <span class="toggle-icon">▼</span>
       <div class="specs">
         <h4>Adicionales</h4>
@@ -446,7 +479,7 @@
     </div>
 
     <div class="card" onclick="toggleSpecs(this)">
-      <img src="https://i.pinimg.com/736x/e6/f4/14/e6f41470038ce6839100da3dbdec9226.jpg" alt="Soft Gel">
+      <img src="https://i.pinimg.com/736x/e6/f4/14/e6f41470038ce6839100da3dbdec9226.jpg" alt="[Image of Soft Gel]">
       <h3>Soft Gel</h3>
       <p>Precio: $13.000</p>
       <span class="toggle-icon">▼</span>
@@ -460,7 +493,7 @@
     </div>
 
     <div class="card" onclick="toggleSpecs(this)">
-      <img src="https://i.pinimg.com/736x/ce/a2/b2/cea2b2e4ab3b11aae5d80eaabd756818.jpg" alt="Esculpidas en Gel">
+      <img src="https://i.pinimg.com/736x/ce/a2/b2/cea2b2e4ab3b11aae5d80eaabd756818.jpg" alt="[Image of Esculpidas en Gel]">
       <h3>Esculpidas en Gel</h3>
       <p>Precio: $17.000</p>
       <span class="toggle-icon">▼</span>
@@ -476,11 +509,12 @@
 </section>
 
 <!-- ===================== SECCIÓN PESTAÑAS ===================== -->
+
 <section id="pestañas">
   <h2>Pestañas</h2>
   <div class="grid">
     <div class="card" onclick="toggleSpecs(this)">
-      <img src="https://ariabeautyspa.com/wp-content/uploads/2024/04/Pestanas-pelo-a-pelo-.jpeg" alt="Pestanas Pelo a Pelo-">
+      <img src="https://ariabeautyspa.com/wp-content/uploads/2024/04/Pestanas-pelo-a-pelo-.jpeg" alt="[Image of Pestanas Pelo a Pelo]">
       <h3>Pestañas</h3>
       <p>haga clic para ver las opciones</p>
       <span class="toggle-icon">▼</span>
@@ -494,14 +528,12 @@
     </div>
 
     <div class="card" onclick="toggleSpecs(this)">
-      <img src="https://labioclinicavigo.com/wp-content/uploads/2024/07/lifting-pestanas.webp" alt="Extensiones Volumen 3D">
+      <img src="https://labioclinicavigo.com/wp-content/uploads/2024/07/lifting-pestanas.webp" alt="[Image of Extensiones Volumen 3D]">
       <h3>Lifting / Permanente / Perfilados</h3>
       <p>haga clic para ver las opciones</p>
       <span class="toggle-icon">▼</span>
       <div class="specs">
         <h4>Opciones</h4>
-        <p>Lamninado: $10.000</p>
-        <p>Lamninado c/t: $11.500</p>
         <p>Perfilado: $10.000</p>
         <p>Lifting: $10.000</p>
         <p>Lifting c/t:  $11.500</p>
@@ -513,6 +545,7 @@
 </section>
 
 <!-- ===================== SECCIÓN CONTACTO ===================== -->
+
 <section id="contacto" style="padding: 2rem 1rem; text-align: center;">
   <h2 style="font-size: 1.8rem; margin-bottom: 1rem;">Contacto & Turnos</h2>
 
@@ -544,12 +577,13 @@
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.263762716352!2d-58.76575192339149!3d-34.622774258506446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc95c1737bec6d%3A0x4c5ae5a1e64545c9!2sGalileo%20Galilei%203549%2C%20B1742FIU%20Paso%20del%20Rey%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1747745821494!5m2!1ses!2sar"
       width="100%" height="300" style="border:0; border-radius: 12px;" allowfullscreen=""
-      loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación del Salón de Estética LR"></iframe>
   </div>
 </section>
 
+
 <footer>
-  <p>&copy; 2025 Salón de Estética LR · Todos los derechos reservados · Desarrollado por Elias Bertonasco</p>
+  <p>© 2025 Salón de Estética LR · Todos los derechos reservados · Desarrollado por LR Dev Studio</p>
 </footer>
 
 <script>
