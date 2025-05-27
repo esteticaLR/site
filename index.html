@@ -57,7 +57,7 @@
     }
 
     /* --- Estilos para la sección de Promociones --- */
-#promociones {
+#promocionesMujeres {
   background-color: #f8f9fa; /* Un gris muy claro para diferenciar el fondo */
   padding: 40px 0; /* Agrega un poco de espacio arriba y abajo */
   margin-top: 50px; /* Sepárala un poco de la sección anterior */
@@ -65,7 +65,7 @@
   text-align: center; /* Centra el título de la sección */
 }
 
-#promociones h2 {
+#promocionesMujeres h2 {
   color: #007bff; /* Color del título principal */
   font-size: 2.8rem; /* Un poco más grande para destacarlo */
   margin-bottom: 30px; /* Espacio debajo del título */
@@ -73,7 +73,7 @@
 }
 
 /* Opcional: Estilos específicos para las tarjetas dentro de promociones */
-#promociones .card {
+#promocionesMujeres .card {
   background-color: #ffffff; /* Fondo blanco para las tarjetas */
   border: 1px solid #e0e0e0; /* Un borde más suave */
   border-radius: 10px; /* Bordes más redondeados */
@@ -81,32 +81,32 @@
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transición suave al pasar el ratón */
 }
 
-#promociones .card:hover {
+#promocionesMujeres .card:hover {
   transform: translateY(-5px); /* Pequeño efecto de elevación al pasar el ratón */
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Sombra más fuerte al pasar el ratón */
 }
 
-#promociones .card img {
+#promocionesMujeres .card img {
   border-top-left-radius: 10px; /* Mantener la redondez en la imagen superior */
   border-top-right-radius: 10px;
 }
 
-#promociones .card h3 {
+#promocionesMujeres .card h3 {
   color: #333; /* Un color de texto más oscuro para los títulos de las promociones */
   font-size: 1.6rem;
 }
 
-#promociones .card p {
+#promocionesMujeres .card p {
   color: #666; /* Un gris más suave para los párrafos */
 }
 
-#promociones .specs {
+#promocionesMujeres .specs {
   background-color: #f0f8ff; /* Un fondo ligeramente diferente para el contenido desplegable */
   border-top: 1px dashed #cfe2f3; /* Borde punteado para el área de especificaciones */
 }
 
 /* Ajustes para que las cards de promociones se vean bien en una fila */
-#promociones .container {
+#promocionesMujeres .container {
     display: flex;
     flex-wrap: wrap; /* Permite que las tarjetas se envuelvan a la siguiente línea */
     gap: 20px; /* Espacio entre las tarjetas */
@@ -116,19 +116,19 @@
 }
 
 /* Asegúrate de que las tarjetas individuales tengan un ancho que permita el flexbox */
-#promociones .card {
+#promocionesMujeres .card {
     flex: 1 1 calc(33% - 20px); /* Aproximadamente 3 tarjetas por fila con espacio */
     max-width: calc(33% - 20px); /* Define el ancho máximo para evitar que se estiren demasiado */
 }
 
 /* Media query para móviles: una sola tarjeta por fila */
 @media (max-width: 768px) {
-  #promociones .card {
+  #promocionesMujeres .card {
     flex: 1 1 100%; /* Una tarjeta por fila en pantallas pequeñas */
     max-width: 100%;
   }
 
-  #promociones h2 {
+  #promocionesMujeres h2 {
     font-size: 2rem; /* Ajusta el tamaño del título en móviles */
   }
 }
