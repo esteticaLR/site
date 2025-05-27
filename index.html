@@ -56,8 +56,16 @@
       opacity: .7;
     }
 
-    /* --- PROMOCIONES MUJERES --- */
 
+
+
+    
+    /* ------------------------------------------------ PROMOCIONES MUJERES ---------------------------------------------- */
+
+
+
+
+    
 #promocionesMujeres {
   background-color: #f8f9fa; /* Un gris muy claro para diferenciar el fondo */
   padding: 40px 0; /* Agrega un poco de espacio arriba y abajo */
@@ -108,22 +116,94 @@
 
 /* Ajustes para que las cards de promociones se vean bien en una fila */
 #promocionesMujeres .container {
-    display: flex;
-    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan a la siguiente línea */
-    gap: 20px; /* Espacio entre las tarjetas */
-    justify-content: center; /* Centra las tarjetas horizontalmente */
-    max-width: 1200px; /* Limita el ancho del contenedor si es necesario */
-    margin: 0 auto; /* Centra el contenedor mismo */
+  display: flex;
+  flex-wrap: wrap; /* Permite que las tarjetas se envuelvan a la siguiente línea */
+  gap: 20px; /* Espacio entre las tarjetas */
+  justify-content: center; /* Centra las tarjetas horizontalmente */
+  max-width: 1200px; /* Limita el ancho del contenedor si es necesario */
+  margin: 0 auto; /* Centra el contenedor mismo */
 }
 
 /* Asegúrate de que las tarjetas individuales tengan un ancho que permita el flexbox */
 #promocionesMujeres .card {
-    flex: 1 1 calc(33% - 20px); /* Aproximadamente 3 tarjetas por fila con espacio */
-    max-width: calc(33% - 20px); /* Define el ancho máximo para evitar que se estiren demasiado */
+  flex: 1 1 calc(33% - 20px); /* Aproximadamente 3 tarjetas por fila con espacio */
+  max-width: calc(33% - 20px); /* Define el ancho máximo para evitar que se estiren demasiado */
 }
 
+---
+
+### Ajustes para Móviles
+
+```css
+/* Media query para pantallas medianas (tablets y algunos móviles grandes) */
+@media (max-width: 768px) {
+  #promocionesMujeres {
+    padding: 30px 0; /* Reduce el padding en móviles */
+    margin-top: 40px; /* Ajusta el margen superior */
+  }
+
+  #promocionesMujeres h2 {
+    font-size: 2.2rem; /* Reduce el tamaño del título */
+    margin-bottom: 25px;
+  }
+
+  #promocionesMujeres .container {
+    gap: 15px; /* Reduce el espacio entre las tarjetas */
+  }
+
+  #promocionesMujeres .card {
+    flex: 1 1 calc(50% - 15px); /* Dos tarjetas por fila en tablets */
+    max-width: calc(50% - 15px);
+  }
+
+  #promocionesMujeres .card h3 {
+    font-size: 1.4rem; /* Ajusta el tamaño del título de la tarjeta */
+  }
+
+  #promocionesMujeres .card p {
+    font-size: 0.9rem; /* Ajusta el tamaño del texto del párrafo */
+  }
+}
+
+/* Media query para pantallas pequeñas (la mayoría de los móviles) */
+@media (max-width: 480px) {
+  #promocionesMujeres {
+    padding: 20px 0; /* Más reducción de padding */
+    margin-top: 30px;
+  }
+
+  #promocionesMujeres h2 {
+    font-size: 1.8rem; /* Título aún más pequeño */
+    margin-bottom: 20px;
+  }
+
+  #promocionesMujeres .container {
+    flex-direction: column; /* Apila las tarjetas verticalmente */
+    gap: 20px; /* Espacio entre tarjetas apiladas */
+  }
+
+  #promocionesMujeres .card {
+    flex: 1 1 100%; /* Una tarjeta por fila en móviles */
+    max-width: 90%; /* Un poco de margen para que no toque los bordes */
+    margin-left: auto; /* Centra la tarjeta */
+    margin-right: auto; /* Centra la tarjeta */
+  }
+
+  #promocionesMujeres .card h3 {
+    font-size: 1.3rem; /* Título de tarjeta más pequeño */
+  }
+
+  #promocionesMujeres .specs {
+    padding: 10px 15px; /* Reduce el padding interno del desplegable */
+  }
+}
+
+    
     /* ------------------------------------------------- PROMOCIONES HOMBRES ---------------------------------------------- */
 
+
+
+    
 #promocionesHombres {
   background-color: #f8f9fa; /* Un gris muy claro para diferenciar el fondo */
   padding: 40px 0; /* Agrega un poco de espacio arriba y abajo */
