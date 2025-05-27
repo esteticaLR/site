@@ -56,11 +56,8 @@
       opacity: .7;
     }
 
+    /* --- PROMOCIONES MUJERES --- */
 
-    /* ------------------------------------------------- PROMOCIONES MUJERES ---------------------------------------------- */
-
-
-    
 #promocionesMujeres {
   background-color: #f8f9fa; /* Un gris muy claro para diferenciar el fondo */
   padding: 40px 0; /* Agrega un poco de espacio arriba y abajo */
@@ -143,156 +140,6 @@
 
 
 
-#promocionesHombres {
-  background-color: #f8f9fa; /* Un gris muy claro para diferenciar el fondo */
-  padding: 40px 0; /* Agrega un poco de espacio arriba y abajo */
-  margin-top: 50px; /* Sepárala un poco de la sección anterior */
-  border-top: 3px solid #007bff; /* Un borde superior llamativo (puedes cambiar el color) */
-  text-align: center; /* Centra el título de la sección */
-}
-
-#promocionesHombres h2 {
-  color: #0603c5; /* Color del título principal */
-  font-size: 2.8rem; /* Un poco más grande para destacarlo */
-  margin-bottom: 30px; /* Espacio debajo del título */
-  font-family: 'Georgia', serif; /* Cambia la fuente para un toque diferente, si tienes otra cargada úsala */
-}
-
-/* Opcional: Estilos específicos para las tarjetas dentro de promociones */
-#promocionesHombres .card {
-  background-color: #ffffff; /* Fondo blanco para las tarjetas */
-  border: 1px solid #e0e0e0; /* Un borde más suave */
-  border-radius: 10px; /* Bordes más redondeados */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transición suave al pasar el ratón */
-}
-
-#promocionesHombres .card:hover {
-  transform: translateY(-5px); /* Pequeño efecto de elevación al pasar el ratón */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Sombra más fuerte al pasar el ratón */
-}
-
-#promocionesHombres .card img {
-  border-top-left-radius: 10px; /* Mantener la redondez en la imagen superior */
-  border-top-right-radius: 10px;
-}
-
-#promocionesHombres .card h3 {
-  color: #333; /* Un color de texto más oscuro para los títulos de las promociones */
-  font-size: 1.6rem;
-}
-
-#promocionesHombres .card p {
-  color: #666; /* Un gris más suave para los párrafos */
-}
-
-#promocionesHombres .specs {
-  background-color: #f0f8ff; /* Un fondo ligeramente diferente para el contenido desplegable */
-  border-top: 1px dashed #cfe2f3; /* Borde punteado para el área de especificaciones */
-}
-
-/* Ajustes para que las cards de promociones se vean bien en una fila */
-#promocionesHombres .container {
-    display: flex;
-    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan a la siguiente línea */
-    gap: 20px; /* Espacio entre las tarjetas */
-    justify-content: center; /* Centra las tarjetas horizontalmente */
-    max-width: 1200px; /* Limita el ancho del contenedor si es necesario */
-    margin: 0 auto; /* Centra el contenedor mismo */
-}
-
-/* Asegúrate de que las tarjetas individuales tengan un ancho que permita el flexbox */
-#promocionesHombres .card {
-    flex: 1 1 calc(33% - 20px); /* Aproximadamente 3 tarjetas por fila con espacio */
-    max-width: calc(33% - 20px); /* Define el ancho máximo para evitar que se estiren demasiado */
-}
-
-/* Media query para móviles: una sola tarjeta por fila */
-@media (max-width: 768px) {
-  #promocionesHombres .card {
-    flex: 1 1 100%; /* Una tarjeta por fila en pantallas pequeñas */
-    max-width: 100%;
-  }
-
-  #promocionesHombres h2 {
-    font-size: 2rem; /* Ajusta el tamaño del título en móviles */
-  }
-}
-
----
-
-### Ajustes para Móviles
-
-```css
-/* Media query para pantallas medianas (tablets y algunos móviles grandes) */
-@media (max-width: 768px) {
-  #promocionesMujeres {
-    padding: 30px 0; /* Reduce el padding en móviles */
-    margin-top: 40px; /* Ajusta el margen superior */
-  }
-
-  #promocionesMujeres h2 {
-    font-size: 2.2rem; /* Reduce el tamaño del título */
-    margin-bottom: 25px;
-  }
-
-  #promocionesMujeres .container {
-    gap: 15px; /* Reduce el espacio entre las tarjetas */
-  }
-
-  #promocionesMujeres .card {
-    flex: 1 1 calc(50% - 15px); /* Dos tarjetas por fila en tablets */
-    max-width: calc(50% - 15px);
-  }
-
-  #promocionesMujeres .card h3 {
-    font-size: 1.4rem; /* Ajusta el tamaño del título de la tarjeta */
-  }
-
-  #promocionesMujeres .card p {
-    font-size: 0.9rem; /* Ajusta el tamaño del texto del párrafo */
-  }
-}
-
-/* Media query para pantallas pequeñas (la mayoría de los móviles) */
-@media (max-width: 480px) {
-  #promocionesMujeres {
-    padding: 20px 0; /* Más reducción de padding */
-    margin-top: 30px;
-  }
-
-  #promocionesMujeres h2 {
-    font-size: 1.8rem; /* Título aún más pequeño */
-    margin-bottom: 20px;
-  }
-
-  #promocionesMujeres .container {
-    flex-direction: column; /* Apila las tarjetas verticalmente */
-    gap: 20px; /* Espacio entre tarjetas apiladas */
-  }
-
-  #promocionesMujeres .card {
-    flex: 1 1 100%; /* Una tarjeta por fila en móviles */
-    max-width: 90%; /* Un poco de margen para que no toque los bordes */
-    margin-left: auto; /* Centra la tarjeta */
-    margin-right: auto; /* Centra la tarjeta */
-  }
-
-  #promocionesMujeres .card h3 {
-    font-size: 1.3rem; /* Título de tarjeta más pequeño */
-  }
-
-  #promocionesMujeres .specs {
-    padding: 10px 15px; /* Reduce el padding interno del desplegable */
-  }
-}
-
-    
-    /* ------------------------------------------------- PROMOCIONES HOMBRES ---------------------------------------------- */
-
-
-
-    
 #promocionesHombres {
   background-color: #f8f9fa; /* Un gris muy claro para diferenciar el fondo */
   padding: 40px 0; /* Agrega un poco de espacio arriba y abajo */
@@ -691,57 +538,6 @@
   </div>
 </section>
 
-<!-- ===================== PROMOCIONES MUJERES ===================== -->
-
-<section id="promocionesMujeres">
-  <div class="container"> <h2>Promo Especial Mujeres</h2>
-    <div class="card" onclick="toggleSpecs(this)">
-      <img src="https://img.freepik.com/fotos-premium/depilacion-axilas-depilacion-lacer-mujer-joven-levantando-brazos_231834-2394.jpg" alt="Imagen de Promoción 1">
-      <h3>Promo 1</h3>
-      <p>¡Haz clic para descubrir!</p>
-      <span class="toggle-icon">▼</span>
-      <div class="specs">
-        <h4>Detalles de la Promoción</h4>
-        <p>• Cara ompleta</p>
-        <p>• Axilas</p>
-        <p>• Brazo completo</p>
-        <p>$13.000</p>
-      </div>
-    </div>
-
-    <div class="card" onclick="toggleSpecs(this)">
-      <img src="https://www.hedonai.com/wp-content/uploads/2019/02/Hedonai-depilacion-laser-zona-bikini.jpg" alt="Imagen de Promoción 2">
-      <h3>Promo 2</h3>
-      <p>¡Haz clic para descubrir!</p>
-      <span class="toggle-icon">▼</span>
-      <div class="specs">
-        <h4>Detalles de la Promoción</h4>
-        <p>• Brazo completo</p>
-        <p>• Axilas</p>
-        <p>• Cavado Profundo</p>
-        <p>$13.000</p>
-      </div>
-    </div>
-
-    <div class="card" onclick="toggleSpecs(this)">
-      <img src="https://depilaciontiendacmb.com.ar/wp-content/uploads/2021/04/Combo-Depilacion-1.jpg" alt="Imagen de Promoción 3">
-      <h3>Promo 3</h3>
-      <p>¡Haz clic para descubrir!</p>
-      <span class="toggle-icon">▼</span>
-      <div class="specs">
-        <h4>Detalles de la Promoción</h4>
-        <p>• Cara completa</p>
-        <p>• axilas</p>
-        <p>• brazo completo</p>
-        <p>• Cavado Profundo</p>
-        <p>• Tira de cola</p>
-        <p>• Pierna completa</p>
-        <p>$20.000</p>
-      </div>
-    </div>
-
-  </div>
-</section>
 
 <!-- ===================== SECCIÓN DEPILACIÓN HOMBRES ===================== -->
 
@@ -824,10 +620,64 @@
   </div>
 </section>
 
+
+<!-- ===================== PROMOCIONES MUJERES ===================== -->
+
+<section id="promocionesMujeres">
+  <div class="container"> <h2>Promo Especiales Mujeres</h2>
+    <div class="card" onclick="toggleSpecs(this)">
+      <img src="https://img.freepik.com/fotos-premium/depilacion-axilas-depilacion-lacer-mujer-joven-levantando-brazos_231834-2394.jpg" alt="Imagen de Promoción 1">
+      <h3>Promo 1</h3>
+      <p>¡Haz clic para descubrir!</p>
+      <span class="toggle-icon">▼</span>
+      <div class="specs">
+        <h4>Detalles de la Promoción</h4>
+        <p>• Cara ompleta</p>
+        <p>• Axilas</p>
+        <p>• Brazo completo</p>
+        <p>$13.000</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleSpecs(this)">
+      <img src="https://www.hedonai.com/wp-content/uploads/2019/02/Hedonai-depilacion-laser-zona-bikini.jpg" alt="Imagen de Promoción 2">
+      <h3>Promo 2</h3>
+      <p>¡Haz clic para descubrir!</p>
+      <span class="toggle-icon">▼</span>
+      <div class="specs">
+        <h4>Detalles de la Promoción</h4>
+        <p>• Brazo completo</p>
+        <p>• Axilas</p>
+        <p>• Cavado Profundo</p>
+        <p>$13.000</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleSpecs(this)">
+      <img src="https://depilaciontiendacmb.com.ar/wp-content/uploads/2021/04/Combo-Depilacion-1.jpg" alt="Imagen de Promoción 3">
+      <h3>Promo 3</h3>
+      <p>¡Haz clic para descubrir!</p>
+      <span class="toggle-icon">▼</span>
+      <div class="specs">
+        <h4>Detalles de la Promoción</h4>
+        <p>• Cara completa</p>
+        <p>• axilas</p>
+        <p>• brazo completo</p>
+        <p>• Cavado Profundo</p>
+        <p>• Tira de cola</p>
+        <p>• Pierna completa</p>
+        <p>$20.000</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
 <!-- ===================== PROMOCIONES HOMBRES ===================== -->
 
 <section id="promocionesHombres">
-  <div class="container"> <h2>Promo Especial Hombres</h2>
+  <div class="container"> <h2>Promo Especiales Hombres</h2>
     <div class="card" onclick="toggleSpecs(this)">
       <img src="https://odd-prod.gfrcdn.net/ODD/images/offer/72942ec3-029e-45ff-8627-08dd66254a28/ebe9b0fb.jpg" alt="Imagen de Promoción 1">
       <h3>Promo 1</h3>
