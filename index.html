@@ -4,6 +4,199 @@
   <meta charset="UTF-8" />
   <title>Salón Estética LR</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+      <style>
+        /* Importar fuentes esenciales */
+        @import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap');
+
+        /* Variables CSS optimizadas para móvil */
+        :root {
+            /* Paleta de colores */
+            --primary-hue: 337;
+            --primary-color: hsl(var(--primary-hue), 90%, 47%);
+            --secondary-color: hsl(var(--primary-hue), 70%, 37%);
+            --accent-color: hsl(200, 70%, 60%);
+
+            /* Colores de texto y fondo */
+            --text-light: #ffffff;
+            --background-dark-alpha: rgba(0, 0, 0, 0.6);
+
+            /* Sombras */
+            --shadow-deep: 0 10px 30px rgba(0, 0, 0, 0.3); /* Ligeramente más suave para móvil */
+            --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.4);
+            --shadow-subtle: 0 3px 10px rgba(0, 0, 0, 0.15);
+            --shadow-sticky: 0 3px 10px rgba(0, 0, 0, 0.15); /* Sombra para el menú pegajoso */
+
+            /* Espaciado - MUCHO MÁS PEQUEÑO COMO BASE PARA MÓVIL */
+            --spacing-xs: 0.4rem;
+            --spacing-sm: 0.7rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem; /* El "más grande" sigue siendo compacto */
+
+            /* Radios de borde */
+            --border-radius-soft: 8px; /* Ligeramente más pequeños */
+            --border-radius-pill: 40px; /* Ligeramente más pequeños */
+
+            /* Transiciones */
+            --transition-fast: 0.2s ease-out;
+            --transition-normal: 0.3s ease-in-out;
+            --transition-slow: 0.5s ease-in-out;
+        }
+
+        /* Base para el cuerpo - Optimizado para móvil */
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f0f2f5;
+            min-height: 180vh; /* Sigue necesitando scroll para probar sticky */
+            font-size: 16px; /* Base de fuente para mejor legibilidad en móvil */
+        }
+
+        /* --- Header Principal - Optimizado para móvil --- */
+        header {
+            background: linear-gradient(145deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            /* PADDING MUY REDUCIDO para un marco compacto en móvil */
+            padding: var(--spacing-lg) var(--spacing-md) 1.8rem; /* Arriba/Abajo/Laterales */
+            text-align: center;
+            color: var(--text-light);
+            box-shadow: var(--shadow-deep);
+            border-bottom-left-radius: var(--border-radius-pill);
+            border-bottom-right-radius: var(--border-radius-pill);
+            position: relative;
+            overflow: hidden;
+            animation: backgroundPulse 20s infinite alternate ease-in-out;
+            transform: translateZ(0);
+            perspective: 1000px;
+            z-index: 100;
+        }
+
+        /* Efecto de "brillo/rayo de luz" dinámico (sin cambios significativos) */
+        header::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.18) 0%, transparent 60%);
+            transform: rotate(60deg);
+            animation: dynamicShimmer 15s infinite linear;
+            pointer-events: none;
+            mix-blend-mode: overlay;
+            opacity: 0.7;
+        }
+
+        /* --- Título H1 - Optimizado para móvil --- */
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem; /* MUY REDUCIDO para móvil */
+            margin: 0;
+            font-weight: 700;
+            text-shadow: 2px 2px 5px var(--background-dark-alpha); /* Sombra más suave */
+            letter-spacing: 1px; /* Menos espaciado */
+            animation: bounceInUp 1.8s ease-out forwards;
+            position: relative;
+            z-index: 2;
+            transform-style: preserve-3d;
+        }
+
+        header h1 span {
+            display: inline-block;
+            transform: translateZ(3px); /* Menor profundidad */
+            transition: transform var(--transition-slow);
+        }
+
+        /* --- Navegación - Optimizado para móvil (por defecto apilado) --- */
+        nav {
+            margin-top: var(--spacing-md); /* Menos espacio entre título y nav */
+            display: flex;
+            flex-direction: column; /* LOS ENLACES SE APILAN POR DEFECTO EN MÓVIL */
+            flex-wrap: wrap; /* Ya no es tan crítico con column, pero se mantiene */
+            justify-content: center;
+            gap: var(--spacing-xs); /* Espaciado muy pequeño entre enlaces */
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: var(--spacing-xs) 0; /* Padding muy sutil para el fondo sticky */
+            box-shadow: var(--shadow-sticky);
+            z-index: 1000;
+            border-bottom-left-radius: var(--border-radius-soft);
+            border-bottom-right-radius: var(--border-radius-soft);
+            transition: all var(--transition-normal);
+        }
+
+        /* Ajustar el margen superior de la navegación cuando NO está sticky (dentro del header) */
+        header nav {
+            margin-top: var(--spacing-md); /* Ajustado para consistencia */
+            background: transparent;
+            box-shadow: none;
+            border-radius: 0;
+            backdrop-filter: blur(0);
+        }
+
+        nav a {
+            font-family: 'Montserrat', sans-serif;
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 700;
+            padding: var(--spacing-sm) var(--spacing-md); /* Padding ajustado para botones de móvil */
+            border-radius: var(--border-radius-pill);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: var(--shadow-subtle);
+            transition: all var(--transition-normal);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transform: translateZ(0);
+            width: 80%; /* Los enlaces ocupan la mayor parte del ancho */
+            max-width: 250px; /* Ancho máximo para no desbordar */
+            text-align: center; /* Centrar el texto en los enlaces */
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.35);
+            transform: translateY(-3px) scale(1.05) rotateX(3deg); /* Efecto más sutil */
+            box-shadow: var(--shadow-hover);
+            border-color: var(--accent-color);
+        }
+
+        nav a:active {
+            transform: translateY(0px) scale(0.98);
+            box-shadow: inset 0 2px 5px var(--background-dark-alpha);
+        }
+
+        /* --- Keyframes (Animaciones) - Ligeramente ajustadas para móvil --- */
+        @keyframes bounceInUp {
+            0% { opacity: 0; transform: translateY(50px) scale(0.9); }
+            60% { opacity: 1; transform: translateY(-10px) scale(1.02); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        @keyframes dynamicShimmer { /* Sin cambios significativos */
+            0% { transform: rotate(60deg) translate(-200%, -200%); }
+            100% { transform: rotate(60deg) translate(200%, 200%); }
+        }
+
+        @keyframes backgroundPulse { /* Sin cambios significativos */
+            0% { background: linear-gradient(145deg, hsl(var(--primary-hue), 90%, 47%) 0%, hsl(var(--primary-hue), 70%, 37%) 100%); }
+            50% { background: linear-gradient(145deg, hsl(var(--primary-hue), 95%, 52%) 0%, hsl(var(--primary-hue), 75%, 42%) 100%); }
+            100% { background: linear-gradient(145deg, hsl(var(--primary-hue), 90%, 47%) 0%, hsl(var(--primary-hue), 70%, 37%) 100%); }
+        }
+
+        /* --- MEDIA QUERIES (Casi todas eliminadas, se mantiene una base para el título si la pantalla es muy pequeña) --- */
+        /* Solo una media query muy básica para asegurar que el título no sea demasiado grande en móviles extremos */
+        @media (max-width: 360px) {
+            header h1 {
+                font-size: 1.8rem; /* Para móviles muy muy pequeños */
+            }
+            nav a {
+                font-size: 0.9rem; /* Un poco más pequeña la letra de los enlaces */
+                padding: var(--spacing-sm) var(--spacing-sm);
+            }
+        }
+    </style>
+
   <style>
     :root {
       --main-color: #c4046e;
