@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <title>Salón Estética LR</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
   <style>
     :root {
       --main-color: #c4046e;
@@ -55,6 +56,7 @@
     header nav a:hover {
       opacity: .7;
     }
+    
 
     /* --- PROMOCIONES MUJERES --- */
 
@@ -399,6 +401,88 @@
       .hero h2 { font-size: 1.6rem; }
     }
   </style>
+
+  <style>
+  :root {
+    --main-color: #f1f1f1;
+    --bg-color: #fdfdfd;
+    --text-color: #222;
+    --accent-light: #f0f0f0;
+    --transition-speed: 0.3s;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    scroll-behavior: smooth;
+  }
+
+  /* ---------- HEADER MINIMALISTA ---------- */
+  header {
+    background-color: rgb(110, 1, 56);
+    color: var(--main-color);
+    padding: 2rem 1rem 1.5rem;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+  }
+
+  header nav {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+
+  header nav a {
+    color: var(--main-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+  }
+
+  header nav a:hover {
+    background-color: var(--main-color);
+    color: rgb(155, 0, 0);
+  }
+
+  @media (max-width: 600px) {
+    header {
+      padding: 1.5rem 1rem;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+    }
+
+    header nav a {
+      font-size: 0.9rem;
+    }
+  }
+</style>
 </head>
 <body>
 <header>
@@ -725,8 +809,9 @@
         <h4>Detalles de la Promoción</h4>
         <p>• Pierna completa</p>
         <p>• Pecho</p>
+        <p>• Pecho</p>
         <p>• Abdomen</p>
-        <p>$15.000</p>
+        <p>$11.500</p>
       </div>
     </div>
 
